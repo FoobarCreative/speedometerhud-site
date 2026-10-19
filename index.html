@@ -157,6 +157,29 @@
       <p class="credit">Speed camera data &copy; OpenStreetMap contributors, available under the Open Database License.</p>
     </div>
   </footer>
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  (function () {
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduce || !('IntersectionObserver' in window)) { return; }
+    var groups = ['#features .feature', '#screens figure', '#faq details', 'section h2, section .intro, .closing p, .closing .cta'];
+    var items = [];
+    groups.forEach(function (sel) {
+      var list = document.querySelectorAll(sel);
+      for (var i = 0; i < list.length; i++) {
+        var el = list[i];
+        el.classList.add('reveal');
+        el.style.transitionDelay = Math.min(i, 5) * 70 + 'ms';
+        items.push(el);
+      }
+    });
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.1 });
+    items.forEach(function (el) { io.observe(el); });
+  })();
+  </script>
 </body>
 </html>
