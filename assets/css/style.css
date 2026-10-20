@@ -127,3 +127,22 @@ footer .credit { margin-top: 14px; font-size: 0.8rem; }
   *, *::before, *::after { animation: none !important; transition: none !important; }
   .reveal { opacity: 1; transform: none; }
 }
+
+/* inner pages */
+.page { max-width: 720px; margin: 0 auto; padding: 28px 20px 72px; }
+.page h1 { font-size: clamp(1.9rem, 5vw, 2.6rem); line-height: 1.12; letter-spacing: -0.02em; margin-bottom: 8px; }
+.page .updated { color: var(--muted); font-size: 0.92rem; margin-bottom: 28px; }
+.page h2 { font-size: 1.3rem; margin: 36px 0 10px; letter-spacing: -0.01em; }
+.page p, .page li { color: var(--text); font-size: 1.02rem; margin-bottom: 14px; }
+.page ul { padding-left: 1.2em; margin-bottom: 14px; }
+.page li { margin-bottom: 8px; }
+.page a { text-decoration: underline; text-decoration-color: var(--teal-2); text-underline-offset: 3px; }
+.page a:hover { text-decoration-color: var(--lime); }
+.page .card { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px 22px; margin: 24px 0; }
+.page .card p:last-child { margin-bottom: 0; }
+.page .app { display: flex; align-items: center; gap: 16px; margin-bottom: 24px; }
+.page .app img { width: 72px; height: 72px; border-radius: 17px; flex: none; }
+.page .app strong { display: block; font-size: 1.1rem; }
+.page .app span { color: var(--muted); font-size: 0.95rem; }
+.page .cta { margin-top: 8px; }
+.page .back { display: inline-block; margin-top: 24px; color: var(--muted); }
